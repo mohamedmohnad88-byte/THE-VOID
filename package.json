@@ -1,0 +1,10 @@
+{
+  "name": "the-void",
+  "version": "1.0.0",
+  "description": "THE VOID — secret encyclopedia of the mind (Arabic-first).",
+  "scripts": {
+    "start": "python3 -m http.server 8080",
+    "dev": "python3 -m http.server 8080"
+  },
+  "license": "MIT"
+}

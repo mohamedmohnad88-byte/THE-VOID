@@ -1,0 +1,498 @@
+{
+  "version": 1,
+  "articles": [
+    {
+      "id": "a-awareness-01",
+      "title": "كيف يبني عقلك الواقع",
+      "category": "cognitive",
+      "stage": "awareness",
+      "summary": "عقلك لا يسجل الواقع، بل يبني نموذجاً له. فهم هذا البناء هو أول خطوة في الوعي بالذات.",
+      "body": "## الذات المبنية\n\nكل تجربة تمر عبر مرشح قبل أن تصل إلى وعيك. الضوء يضرب الشبكية، والصوت يُثير الطبلة، والدماغ يجمع مشهداً متماسكاً من شظايا. ما تسميه واقعاً هو تفسير بالفعل.\n\nهذا ليس خللاً. إنه ميزة أبقت البشر أحياء. لكنه يعني أن صورتك عن نفسك، ومخاوفك، وافتراضاتك هي أيضاً بنايات — نماذج مبنية من بيانات سابقة، وانحياز، وتكرار.\n\n## لماذا يهم هذا\n\nإذا صدّقت أن أفكارك حقائق، أصبحت أسيراً لها. إذا رأيتها نماذج، اكتسبت رافعة: يمكنك التشكيك، والاختبار، والمراجعة. الوعي بالذات يبدأ في اللحظة التي تلاحظ فيها أنك لست أفكارك — أنت من يراقبها.\n\n## تمرين: موقف المراقب\n\n1. اجلس هادئاً لمدة خمس دقائق.\n2. لاحظ فكرة كما تظهر: «أنا قلق بشأن الغد.»\n3. أعد صياغتها: «ألاحظ أنني قلق بشأن الغد.»\n4. كرر. لا تجادل الفكرة.\n\nهذا التحول الصغير — من أن تكون داخل الفكرة إلى أن تراقبها — هو أساس كل مهارة لاحقة.\n\n> عقلك ليس نافذة. إنه ورشة. تعلم ما يبنيه.",
+      "exercises": [
+        "موقف المراقب: 5 دقائق يومياً لمدة أسبوع. سجّل ما تلاحظه.",
+        "دوّن ثلاث معتقدات تعتنقها عن نفسك وحدد      .",
+        "اسأل صديقاً مقرّباً      وقارن مع قائمتك."
+      ],
+      "references": [
+        {
+          "title": "علم النفس - جمعية علم النفس الأمريكية",
+          "author": "American Psychological Association",
+          "year": 2024,
+          "url": "https://www.apa.org/topics",
+          "type": "organization"
+        }
+      ],
+      "tags": [
+        "وعي",
+        "إدراك",
+        "صورة الذات"
+      ],
+      "updated": "2026-11-24",
+      "status": "published"
+    },
+    {
+      "id": "a-awareness-02",
+      "title": "أنماط العقل: التعرف على أفكارك المتكررة",
+      "category": "cognitive",
+      "stage": "awareness",
+      "summary": "معظم المعاناة لا تأتي من أحداث منفردة، بل من حلقات ذهنية متكررة. تعلم رؤية الحلقة.",
+      "body": "## حلقات، لا أحداث\n\nانكماش واحد نادراً ما يكسر إنساناً. ما يكسره هو الحلقة التي تليه: الإعادة، والتنبؤ، والانتقاد الذاتي، ثم الإعادة مرة أخرى. هذه الحلقات تصبح غير مرئية عبر التكرار — تبدو كما أنا.\n\n## الحلقات الثلاث\n\n- **المضغ**: إعادة ماضي. «لماذا قلت ذلك؟»\n- **التوقع**: بروفة للمستقبل. «ماذا لو سارت الأمور ؟»\n- **التقييم الذاتي**: حكم على الذات. «أنا لست .»\n\nكل حلقة لها محفز، و في الجسد، وسرد. الوعي يعني الإمساك بالحلقة عند المحفز، قبل أن يتولى السرد.\n\n> لا يمكنك تغيير لم تره بعد.",
+      "exercises": [
+        "تسجيل الحلقات لمدة 7 أيام.",
+        "حدد حلقة  .",
+        "عندما تظهر الحلقة، قل بصوت عالٍ: هذه هي حلقة [الاسم]."
+      ],
+      "references": [
+        {
+          "title": "علم النفس - جمعية علم النفس الأمريكية",
+          "author": "American Psychological Association",
+          "year": 2024,
+          "url": "https://www.apa.org/topics",
+          "type": "organization"
+        }
+      ],
+      "tags": [
+        "حلقات",
+        "أنماط",
+        "وعي"
+      ],
+      "updated": "2026-11-24",
+      "status": "published"
+    },
+    {
+      "id": "a-biases-01",
+      "title": "الانحيازات المعرفية: الأخطاء الخفية في تفكيرك",
+      "category": "biases",
+      "stage": "awareness",
+      "summary": "الاستدلال البشري ليس حاسبة. إنها مجموعة اختصارات تعمل عادةً — وأحياناً تفشل بشكل متوقع.",
+      "body": "## اختصارات وتكاليفها\n\nالانحيازات المعرفية هي أخطاء منهجية في التفكير، ناتجة عن اختصارات ذهنية () يستخدمها العقل لتسريع الاستدلال. هذه ليست أخطاء عشوائية، بل سمات بنيوية للإدراك.\n\n## انحيازات رئيسية\n\n- **انحياز التأكيد**: البحث عن ما تعتقد .\n- **الإرساء**: الإفراط في الاعتماد على .\n- **التوافر**: حكم على .\n- **مغالطة التكلفة الغارقة**: الاستمرار .\n\n## الدفاع\n\nلا يمكنك الانحيازات. يمكنك بناء : ، ، .\n\n> العقل الذي لا يغير رأيه أبداً ليس قوياً. إنه عالق.",
+      "exercises": [
+        ".         .",
+        "،     /    .      .",
+        "."
+      ],
+      "references": [
+        {
+          "title": "علم النفس - جمعية علم النفس الأمريكية",
+          "author": "American Psychological Association",
+          "year": 2024,
+          "url": "https://www.apa.org/topics",
+          "type": "organization"
+        }
+      ],
+      "tags": [
+        "انحيازات",
+        "استدلال",
+        "قرار"
+      ],
+      "updated": "2026-11-24",
+      "status": "published"
+    },
+    {
+      "id": "a-critical-01",
+      "title": "التفكير النقدي: كيف تختبر ادعاءً",
+      "category": "critical",
+      "stage": "perception",
+      "summary": "التفكير النقدي ليس تشاؤماً. إنها انضباط  '   ?' و '   ?'",
+      "body": "## السؤال الأساسي\n\nالتفكير النقدي يختزل إلى : «ما ، وما مدى قوتها؟»\n\n## إطار عملي\n\n1. **وضّح الادعاء.** ماذا ؟\n2. **حدد .** ، ، ، ؟\n3. **تحقق من .** ؟\n4. **ابحث عن .** ؟\n5. ** .** ؟\n6. **قرر .** .\n\n## فخاخ شائعة\n\n- .\n- .\n- .\n\n> الشك ليس ضعفاً. الشك هو ثمن الدقة.",
+      "exercises": [
+        "6-  .",
+        ".   .",
+        "."
+      ],
+      "references": [
+        {
+          "title": "علم النفس - جمعية علم النفس الأمريكية",
+          "author": "American Psychological Association",
+          "year": 2024,
+          "url": "https://www.apa.org/topics",
+          "type": "organization"
+        }
+      ],
+      "tags": [
+        "تفكير نقدي",
+        "",
+        "استدلال"
+      ],
+      "updated": "2026-11-24",
+      "status": "published"
+    },
+    {
+      "id": "a-ei-01",
+      "title": "الذكاء العاطفي: المهارة الكامنة وراء كل المهارات",
+      "category": "ei",
+      "stage": "control",
+      "summary": "الذكاء العاطفي ليس أن تكون لطيفاً. إنها ، ، ، و  .",
+      "body": "## الفروع الأربعة\n\nالذكاء العاطفي ( ) يشمل أربع قدرات:\n\n1. **إدراك العواطف** — ، ، .\n2. **استخدام العواطف** — .\n3. **فهم العواطف** — ، ، .\n4. **إدارة العواطف** — ' .\n\n## لماذا يهم\n\n . ، ، .\n\n## المفهوم الخاطئ\n\nالذكاء العاطفي ليس . .\n\n## تمرين: قاعدة 90 ثانية\n\n 90 . ، - .\n\n> أنت لست عاطفتك. أنت من يلاحظها.",
+      "exercises": [
+        "،       .",
+        "90-     .",
+        ":       ؟"
+      ],
+      "references": [
+        {
+          "title": "علم النفس - جمعية علم النفس الأمريكية",
+          "author": "American Psychological Association",
+          "year": 2024,
+          "url": "https://www.apa.org/topics",
+          "type": "organization"
+        }
+      ],
+      "tags": [
+        "عواطف",
+        "ذكاء عاطفي",
+        "تنظيم"
+      ],
+      "updated": "2026-11-24",
+      "status": "published"
+    },
+    {
+      "id": "a-control-01",
+      "title": "تنظيم الانفعالات: بنية ضبط النفس",
+      "category": "ei",
+      "stage": "control",
+      "summary": "ضبط النفس ليس . إنها مجموعة         .",
+      "body": "## \n\n - . (، 1998، 2015) : ، ، ، ، .\n\n## الاستراتيجيات الخمس\n\n1. **اختيار **: .\n2. **تعديل **: .\n3. **نشر **: .\n4. **تغيير **: .\n5. **تعديل **: .\n\n .\n\n> لا تتحكم في ما يحدث. تتحكم في ما يعنيه.",
+      "exercises": [
+        ".",
+        ".  .",
+        ":        ."
+      ],
+      "references": [
+        {
+          "title": "علم النفس - جمعية علم النفس الأمريكية",
+          "author": "American Psychological Association",
+          "year": 2024,
+          "url": "https://www.apa.org/topics",
+          "type": "organization"
+        }
+      ],
+      "tags": [
+        "تنظيم",
+        "إعادة تقييم",
+        "ضبط النفس"
+      ],
+      "updated": "2026-11-24",
+      "status": "published"
+    },
+    {
+      "id": "a-behavioral-01",
+      "title": "علم النفس السلوكي: كيف تُبنى العادات وتُكسر",
+      "category": "behavioral",
+      "stage": "discipline",
+      "summary": "السلوك ليس . إنها   ، ،  .",
+      "body": "## حلقة العادة\n\n ' : ()، ()، (). .\n\n## لماذا تستمر العادات\n\n . ، ; .\n\n## استراتيجية الاستبدال\n\n1. .\n2. .\n3. .\n4. .\n\n> أنت لست عاداتك. أنت .",
+      "exercises": [
+        "' --.",
+        ".",
+        "14 ."
+      ],
+      "references": [
+        {
+          "title": "علم النفس - جمعية علم النفس الأمريكية",
+          "author": "American Psychological Association",
+          "year": 2024,
+          "url": "https://www.apa.org/topics",
+          "type": "organization"
+        }
+      ],
+      "tags": [
+        "عادات",
+        "سلوك",
+        "تغيير"
+      ],
+      "updated": "2026-11-24",
+      "status": "published"
+    },
+    {
+      "id": "a-resilience-01",
+      "title": "المرونة النفسية: الانحناء دون كسر",
+      "category": "resilience",
+      "stage": "discipline",
+      "summary": "المرونة ليست . إنها       .",
+      "body": "## \n\n . .\n\n## عوامل المرونة\n\n- ****: .\n- ****: ، ، ، .\n- ** **: ، -.\n- ****: .\n\n## إعادة الصياغة\n\n . .\n\n> المرونة ليست غياب السقوط. إنها .",
+      "exercises": [
+        "-     .",
+        ".",
+        "."
+      ],
+      "references": [
+        {
+          "title": "علم النفس - جمعية علم النفس الأمريكية",
+          "author": "American Psychological Association",
+          "year": 2024,
+          "url": "https://www.apa.org/topics",
+          "type": "organization"
+        }
+      ],
+      "tags": [
+        "مرونة",
+        "تعافي",
+        "تكيف"
+      ],
+      "updated": "2026-11-24",
+      "status": "published"
+    },
+    {
+      "id": "a-assertiveness-01",
+      "title": "الثبات: الوقوف على موقفك دون فقدان الاحترام",
+      "category": "assertiveness",
+      "stage": "mastery",
+      "summary": "الثبات هو      — ، ،  .",
+      "body": "## الأنماط الثلاثة\n\n- ****: ; .\n- ****: ; .\n- ****: ، .\n\n ، .\n\n## : \n\n- **** .\n- **** .\n- **** .\n- ****: .\n\n> الاحترام يبدأ باحترام الذات.",
+      "exercises": [
+        ".",
+        "''   .",
+        "."
+      ],
+      "references": [
+        {
+          "title": "علم النفس - جمعية علم النفس الأمريكية",
+          "author": "American Psychological Association",
+          "year": 2024,
+          "url": "https://www.apa.org/topics",
+          "type": "organization"
+        }
+      ],
+      "tags": [
+        "ثبات",
+        "تواصل",
+        "حدود"
+      ],
+      "updated": "2026-11-24",
+      "status": "published"
+    },
+    {
+      "id": "a-social-01",
+      "title": "علم النفس الاجتماعي: لماذا يفعل الناس ما يفعلون في المجموعات",
+      "category": "social",
+      "stage": "perception",
+      "summary": "الأفراد في المجموعات يتصرفون    .",
+      "body": "## تأثير المجموعة\n\n ، ، . :\n\n- **** (): .\n- **** (): .\n- ** **: .\n- ** **: ' .\n\n## دفاعات عملية\n\n- .\n- ، .\n- .\n\n> أنت لست .",
+      "exercises": [
+        ".",
+        "،        .",
+        "-    ."
+      ],
+      "references": [
+        {
+          "title": "علم النفس - جمعية علم النفس الأمريكية",
+          "author": "American Psychological Association",
+          "year": 2024,
+          "url": "https://www.apa.org/topics",
+          "type": "organization"
+        }
+      ],
+      "tags": [
+        "اجتماعي",
+        "تأثير",
+        "مجموعات"
+      ],
+      "updated": "2026-11-24",
+      "status": "published"
+    },
+    {
+      "id": "a-human-01",
+      "title": "السلوك الإنساني: الطبقات",
+      "category": "human",
+      "stage": "perception",
+      "summary": "السلوك هو  .    ، ،  .",
+      "body": "## نموذج جبل الجليد\n\n — ، ، — . : ، ، ، .\n\n## \n\n -. : ، ، ، .\n\n## -\n\n ، ، — : ؟\n\n> السلوك . .",
+      "exercises": [
+        "،     .",
+        ".",
+        "."
+      ],
+      "references": [
+        {
+          "title": "علم النفس - جمعية علم النفس الأمريكية",
+          "author": "American Psychological Association",
+          "year": 2024,
+          "url": "https://www.apa.org/topics",
+          "type": "organization"
+        }
+      ],
+      "tags": [
+        "سلوك",
+        "احتياجات",
+        "تعاطف"
+      ],
+      "updated": "2026-11-24",
+      "status": "published"
+    },
+    {
+      "id": "a-decision-01",
+      "title": "اتخاذ القرار في ظل عدم اليقين",
+      "category": "decision",
+      "stage": "discipline",
+      "summary": "القرارات الجيدة ليست    .",
+      "body": "## أسطورة \n\n . ، .\n\n## إطار \n\n1. .\n2. .\n3. .\n4. .\n5. .\n6. .\n\n## الفخّان\n\n- .\n- .\n\n> .",
+      "exercises": [
+        ".",
+        "-    .",
+        "."
+      ],
+      "references": [
+        {
+          "title": "علم النفس - جمعية علم النفس الأمريكية",
+          "author": "American Psychological Association",
+          "year": 2024,
+          "url": "https://www.apa.org/topics",
+          "type": "organization"
+        }
+      ],
+      "tags": [
+        "قرار",
+        "عدم يقين",
+        "إطار"
+      ],
+      "updated": "2026-11-24",
+      "status": "published"
+    },
+    {
+      "id": "a-stoic-01",
+      "title": "الفلسفة الرواقية: انض القلعة الداخلية",
+      "category": "stoic",
+      "stage": "mastery",
+      "summary": "الرواقية ليست . إنها        .",
+      "body": "## التمييز الأساسي\n\n (، ، ) (، ، ، ).\n\n## الانضباطات الثلاث\n\n1. : .\n2. : .\n3. : .\n\n## الفضائل الرواقية\n\n، ، ، .\n\n> ، .",
+      "exercises": [
+        ".   '  '  ''.",
+        ".",
+        "."
+      ],
+      "references": [
+        {
+          "title": "علم النفس - جمعية علم النفس الأمريكية",
+          "author": "American Psychological Association",
+          "year": 2024,
+          "url": "https://www.apa.org/topics",
+          "type": "organization"
+        }
+      ],
+      "tags": [
+        "رواقية",
+        "تحكم",
+        "فلسفة"
+      ],
+      "updated": "2026-11-24",
+      "status": "published"
+    },
+    {
+      "id": "a-stoic-02",
+      "title": "الرواقية في الممارسة: مراجعة الصباح والمساء",
+      "category": "stoic",
+      "stage": "mastery",
+      "summary": "الرواقية  ،   .",
+      "body": "## صباح: \n\n ' ، ، .\n\n## مساء: \n\n ، ' . : ؟ ؟ ؟\n\n> . .",
+      "exercises": [
+        "7 .",
+        "7 .",
+        "30 ."
+      ],
+      "references": [
+        {
+          "title": "علم النفس - جمعية علم النفس الأمريكية",
+          "author": "American Psychological Association",
+          "year": 2024,
+          "url": "https://www.apa.org/topics",
+          "type": "organization"
+        }
+      ],
+      "tags": [
+        "رواقية",
+        "ممارسة",
+        "طقوس"
+      ],
+      "updated": "2026-11-24",
+      "status": "published"
+    },
+    {
+      "id": "a-resilience-02",
+      "title": "عقلية النمو: المعتقد الذي يشكل القدرة",
+      "category": "resilience",
+      "stage": "discipline",
+      "summary": "القدرة ليست .            .",
+      "body": "## . \n\n- ****: . .\n- ****: . .\n\n .\n\n## تمرين: إعادة صياغة\n\n - -: « ' .» : « ' .»\n\n> .",
+      "exercises": [
+        "-      .",
+        "'    '  '   '.",
+        "،  ."
+      ],
+      "references": [
+        {
+          "title": "علم النفس - جمعية علم النفس الأمريكية",
+          "author": "American Psychological Association",
+          "year": 2024,
+          "url": "https://www.apa.org/topics",
+          "type": "organization"
+        }
+      ],
+      "tags": [
+        "عقلية",
+        "نمو",
+        "تعلم"
+      ],
+      "updated": "2026-11-24",
+      "status": "published"
+    },
+    {
+      "id": "a-control-02",
+      "title": "الانفعال 90 ثانية: لماذا تمر المشاعر إذا تركتها",
+      "category": "ei",
+      "stage": "control",
+      "summary": "العواطف    .  90 ،     .",
+      "body": "## \n\n ، 90 . ، - .\n\n## الت含意\n\n 90 . .\n\n## تمرين\n\n :\n1. .\n2. 90 .\n3. 90 ، .\n\n> .",
+      "exercises": [
+        "90-       .",
+        ".",
+        "."
+      ],
+      "references": [
+        {
+          "title": "علم النفس - جمعية علم النفس الأمريكية",
+          "author": "American Psychological Association",
+          "year": 2024,
+          "url": "https://www.apa.org/topics",
+          "type": "organization"
+        }
+      ],
+      "tags": [
+        "انفعال",
+        "تنظيم",
+        ""
+      ],
+      "updated": "2026-11-24",
+      "status": "published"
+    },
+    {
+      "id": "a-social-02",
+      "title": "العدوى العاطفية: كيف تنتشر المشاعر بين الناس",
+      "category": "social",
+      "stage": "perception",
+      "summary": "العواطف .       .",
+      "body": "## \n\n ، ، . — .\n\n## الت含意\n\n- .\n- .\n- .\n\n## ، \n\n . :\n- ' .\n- : « .»\n- .\n\n> .",
+      "exercises": [
+        ".",
+        ".",
+        "."
+      ],
+      "references": [
+        {
+          "title": "علم النفس - جمعية علم النفس الأمريكية",
+          "author": "American Psychological Association",
+          "year": 2024,
+          "url": "https://www.apa.org/topics",
+          "type": "organization"
+        }
+      ],
+      "tags": [
+        "عدوى",
+        "اجتماعي",
+        "حدود"
+      ],
+      "updated": "2026-11-24",
+      "status": "published"
+    }
+  ]
+}

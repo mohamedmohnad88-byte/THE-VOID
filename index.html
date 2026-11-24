@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THE VOID — اعرف عقلك. اعرف قوتك.</title>
+  <meta name="description" content="THE VOID موسوعة سرية للعقل: علم النفس، الذكاء العاطفي، الفلسفة الرواقية، ومسار الصعود." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700&family=Cinzel:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/void.css" />
+</head>
+<body>
+  <canvas id="nebula"></canvas>
+
+  <nav class="v-nav">
+    <div class="v-nav-inner">
+      <a href="index.html" class="v-brand">
+        <svg class="sigil" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1"><circle cx="13" cy="13" r="12"/><circle cx="13" cy="13" r="6"/><path d="M13 1 L13 25 M1 13 L25 13"/></svg>
+        THE VOID
+      </a>
+      <button class="v-nav-toggle" aria-label="القائمة">&#9776;</button>
+      <div class="v-nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="library.html">المكتبة</a>
+        <a href="path.html">مسار الصعود</a>
+        <a href="admin/login.html">الإدارة</a>
+      </div>
+      <button id="langToggle" class="v-btn" style="padding:6px 12px;font-size:0.7rem;">EN</button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="v-hero v-fade-in">
+      <div>
+        <span class="v-eyebrow v-mono">موسوعة سرية للعقل</span>
+        <h1>العالم لا يحدد<br/>حدودك.</h1>
+        <p class="v-sub">
+          أنت لا تحتاج أن تصبح شخصاً آخر. أنت تحتاج أن تفهم نفسك،
+          وتكتشف قدراتك، وتتعلم كيف تقود حياتك.
+        </p>
+        <div class="v-hero-actions">
+          <a href="library.html" class="v-btn v-btn-primary">ادخل المكتبة</a>
+          <a href="path.html" class="v-btn">ابدأ الصعود</a>
+        </div>
+        <div class="v-symbols" style="margin-top:48px;">&#9798; &#9788; &#9785; &#10013; &#9775;</div>
+      </div>
+    </section>
+
+    <section class="v-section">
+      <div class="v-container">
+        <span class="v-eyebrow v-mono">الرسالة الأساسية</span>
+        <h2>أتقن ردود أفعالك.</h2>
+        <p style="max-width:720px;color:var(--v-text-muted);">
+          THE VOID ليست وعداً بالسيطرة على الآخرين. إنها انضباط للسيطرة على نفسك.
+          معرفة العقل، مبنية على العلم والفلسفة، تُقدَّم بلا أوهام.
+        </p>
+        <div class="v-grid v-grid-3" style="margin-top:48px;">
+          <div class="v-card">
+            <div class="v-card-title">اعرف عقلك.</div>
+            <div class="v-card-meta">الوعي</div>
+            <p>إذا فهمت كيف تُبنَى أفكارك، توقفت عن أن تكون أسيراً لها.</p>
+          </div>
+          <div class="v-card">
+            <div class="v-card-title">اعرف قوتك.</div>
+            <div class="v-card-meta">الإتقان</div>
+            <p>الوعي بالذات هو أعظم ميزة يمكن للإنسان أن يمتلكها.</p>
+          </div>
+          <div class="v-card">
+            <div class="v-card-title">الصمت خيار.</div>
+            <div class="v-card-meta">التحكم</div>
+            <p>ليس ضعفاً. بل قرار يُتَّخَذ من موضع قوة.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="v-section" style="background:rgba(13,7,32,0.4);">
+      <div class="v-container">
+        <span class="v-eyebrow v-mono">مسار الصعود</span>
+        <h2>خمس مراحل للعقل.</h2>
+        <div id="stagePreview" class="v-grid" style="margin-top:32px;"></div>
+        <div style="margin-top:32px;">
+          <a href="path.html" class="v-btn">عرض المسار كاملاً</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="v-section">
+      <div class="v-container">
+        <span class="v-eyebrow v-mono">الحراس</span>
+        <h2>الشخصيات الغامضة.</h2>
+        <div class="v-grid v-grid-4" style="margin-top:32px;">
+          <div class="v-card v-char">
+            <div class="v-char-sigil">&#9798;</div>
+            <div class="v-card-title">الأرشيفي</div>
+            <div class="v-card-meta">حارس السجلات</div>
+            <p>يجمع المعرفة. لا ينسى شيئاً. يشارك فقط مع من يبحث.</p>
+          </div>
+          <div class="v-card v-char">
+            <div class="v-char-sigil">&#9788;</div>
+            <div class="v-card-title">المراقب</div>
+            <div class="v-card-meta">راصد الأنماط</div>
+            <p>يرى الحلقات التي لا يمكنك رؤيتها في نفسك.</p>
+          </div>
+          <div class="v-card v-char">
+            <div class="v-char-sigil">&#9785;</div>
+            <div class="v-card-title">الصائغ</div>
+            <div class="v-card-meta">حدّاد الانضباط</div>
+            <p>يحوّل النية إلى عادة عبر التكرار.</p>
+          </div>
+          <div class="v-card v-char">
+            <div class="v-char-sigil">&#10013;</div>
+            <div class="v-card-title">المرآة</div>
+            <div class="v-card-meta">عاكسة الحقيقة</div>
+            <p>تُظهر لك ما هو موجود، لا ما تود رؤيته.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="v-section" style="background:rgba(13,7,32,0.4);">
+      <div class="v-container">
+        <div class="v-tip" id="dailyTip">
+          <span class="v-eyebrow v-mono">البث اليومي</span>
+          <p id="tipText" style="font-size:1.3rem;font-family:var(--font-display);color:var(--v-silver-bright);">جاري التحميل...</p>
+          <p id="tipSource" class="v-mono" style="margin-top:8px;"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="v-footer">
+    <div class="v-container">
+      <p>THE VOID &mdash; موسوعة سرية للعقل.</p>
+      <p class="v-mono" style="margin-top:8px;">المعرفة ليست قوة. المعرفة المطبقة هي القوة.</p>
+    </div>
+  </footer>
+
+  <div class="v-settings">
+    <button aria-label="الإعدادات">&#9881;</button>
+    <div class="v-settings-panel">
+      <label>تقليل الحركة <input type="checkbox" data-setting="reduceMotion" /></label>
+      <label>الصوت <input type="checkbox" data-setting="sound" /></label>
+    </div>
+  </div>
+
+  <div class="v-toast"></div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/void-core.js"></script>
+  <script>
+    VOID.initCommon();
+    (function(){
+      const el = document.getElementById('stagePreview');
+      VOID.STAGES.forEach(s => {
+        const d = document.createElement('div');
+        d.className = 'v-card';
+        d.innerHTML = '<div class="v-card-meta">'+s.roman+' &mdash; '+VOID.esc(s.name)+'</div><p>'+VOID.esc(s.desc)+'</p>';
+        el.appendChild(d);
+      });
+    })();
+    VOID.loadTips().then(tips => {
+      const t = tips[Math.floor(Math.random()*tips.length)];
+      document.getElementById('tipText').textContent = t.text;
+      document.getElementById('tipSource').textContent = '— ' + (t.source || 'THE VOID');
+    });
+    // lang toggle
+    document.getElementById('langToggle').addEventListener('click', () => {
+      const cur = localStorage.getItem('v_lang') || 'ar';
+      const next = cur === 'ar' ? 'en' : 'ar';
+      localStorage.setItem('v_lang', next);
+      location.reload();
+    });
+  </script>
+</body>
+</html>

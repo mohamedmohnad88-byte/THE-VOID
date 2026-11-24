@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THE VOID — الإدارة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/void.css" />
+  <style>
+    .admin-wrap { display:flex; min-height:100vh; position:relative; z-index:1; }
+    .admin-side { width:220px; border-left:1px solid var(--v-border); padding:24px 16px; background:rgba(3,2,10,0.7); }
+    .admin-side a { display:block; padding:10px 12px; color:var(--v-text-muted); font-family:var(--font-ui); font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; border-right:2px solid transparent; margin-bottom:4px; }
+    .admin-side a.active, .admin-side a:hover { color:var(--v-silver-bright); border-color:var(--v-purple-glow); background:rgba(138,79,255,0.06); }
+    .admin-main { flex:1; padding:32px; overflow:auto; }
+    .admin-section { display:none; }
+    .admin-section.active { display:block; }
+    .admin-table { width:100%; border-collapse:collapse; font-size:0.9rem; }
+    .admin-table th, .admin-table td { padding:10px 8px; border-bottom:1px solid var(--v-border); text-align:right; vertical-align:top; }
+    .admin-table th { font-family:var(--font-ui); font-size:0.7rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--v-text-muted); }
+    .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .form-grid .full { grid-column:1/-1; }
+    @media(max-width:900px){ .form-grid{grid-template-columns:1fr;} .admin-side{width:180px;} }
+  </style>
+</head>
+<body>
+  <div class="admin-wrap">
+    <aside class="admin-side">
+      <div style="font-family:var(--font-display);font-size:1.1rem;letter-spacing:0.2em;color:var(--v-silver-bright);margin-bottom:24px;">THE VOID</div>
+      <a href="#" data-sec="dashboard" class="active">لوحة التحكم</a>
+      <a href="#" data-sec="articles">المقالات</a>
+      <a href="#" data-sec="editor">المحرر</a>
+      <a href="#" data-sec="categories">التصنيفات</a>
+      <a href="#" data-sec="tips">النصائح اليومية</a>
+      <a href="#" id="logoutBtn">تسجيل الخروج</a>
+    </aside>
+    <main class="admin-main">
+      <div id="guardMsg" class="v-loading">جاري التحقق من الوصول...</div>
+
+      <section class="admin-section" id="sec-dashboard">
+        <h2>لوحة التحكم</h2>
+        <div class="v-grid v-grid-3" style="margin-top:24px;">
+          <div class="v-card"><div class="v-card-meta">المقالات</div><div class="v-card-title" id="statArticles">—</div></div>
+          <div class="v-card"><div class="v-card-meta">منشورة</div><div class="v-card-title" id="statPublished">—</div></div>
+          <div class="v-card"><div class="v-card-meta">مسودات</div><div class="v-card-title" id="statDrafts">—</div></div>
+        </div>
+        <p style="margin-top:24px;color:var(--v-text-muted);">المحتوى مخزّن في Firestore (void_articles, void_tips, void_categories). المقالات الأولية من data/articles.ar.json تُستخدم كاحتياط عندما تكون Firestore فارغة.</p>
+        <div style="margin-top:16px;">
+          <button class="v-btn" id="seedBtn">استيراد المقالات من JSON</button>
+          <span id="seedStatus" class="form-status" style="margin-right:12px;"></span>
+        </div>
+      </section>
+
+      <section class="admin-section" id="sec-articles">
+        <h2>المقالات</h2>
+        <div style="margin:16px 0;display:flex;gap:12px;flex-wrap:wrap;">
+          <button class="v-btn" id="newArticleBtn">+ مقال جديد</button>
+          <button class="v-btn" id="refreshArticlesBtn">تحديث</button>
+        </div>
+        <div style="overflow:auto;">
+          <table class="admin-table">
+            <thead><tr><th>العنوان</th><th>التصنيف</th><th>المرحلة</th><th>الحالة</th><th>تحديث</th><th>إجراءات</th></tr></thead>
+            <tbody id="articlesTbody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="admin-section" id="sec-editor">
+        <h2>محرر المقال</h2>
+        <form id="articleForm" style="margin-top:24px;">
+          <input type="hidden" id="a_id" />
+          <div class="form-grid">
+            <div><label>العنوان</label><input class="v-input" id="a_title" required /></div>
+            <div><label>التصنيف</label>
+              <select class="v-select" id="a_category"></select></div>
+            <div><label>المرحلة</label>
+              <select class="v-select" id="a_stage">
+                <option value="">— لا شيء —</option>
+              </select></div>
+            <div><label>الحالة</label>
+              <select class="v-select" id="a_status">
+                <option value="draft">مسودة (للمراجعة)</option>
+                <option value="published">منشورة</option>
+              </select></div>
+            <div class="full"><label>ملخص</label><input class="v-input" id="a_summary" /></div>
+            <div class="full"><label>المتن (markdown: # ## ###، قوائم -، اقتباسات >)</label><textarea class="v-textarea" id="a_body" rows="14"></textarea></div>
+            <div class="full"><label>التمارين (واحد في كل سطر)</label><textarea class="v-textarea" id="a_exercises" rows="4"></textarea></div>
+            <div class="full"><label>الوسوم (مفصولة بفواصل)</label><input class="v-input" id="a_tags" /></div>
+            <div class="full"><label>المراجع (مصفوفة JSON: title, author, year, url, type)</label><textarea class="v-textarea" id="a_refs" rows="6">[]</textarea></div>
+            <div class="full"><label>تحديث (تاريخ ISO)</label><input class="v-input" id="a_updated" /></div>
+          </div>
+          <div style="margin-top:20px;display:flex;gap:12px;">
+            <button type="submit" class="v-btn v-btn-primary">حفظ</button>
+            <button type="button" class="v-btn" id="cancelEditBtn">إلغاء</button>
+          </div>
+          <p id="editorStatus" class="form-status" style="margin-top:12px;"></p>
+        </form>
+      </section>
+
+      <section class="admin-section" id="sec-categories">
+        <h2>التصنيفات</h2>
+        <div style="margin:16px 0;display:flex;gap:12px;flex-wrap:wrap;">
+          <input class="v-input" id="newCatName" placeholder="اسم التصنيف الجديد" style="max-width:260px;" />
+          <input class="v-input" id="newCatId" placeholder="المعرف (slug)" style="max-width:180px;" />
+          <button class="v-btn" id="addCatBtn">+ إضافة</button>
+        </div>
+        <table class="admin-table">
+          <thead><tr><th>المعرف</th><th>الاسم</th><th>الوصف</th><th>إجراءات</th></tr></thead>
+          <tbody id="catsTbody"></tbody>
+        </table>
+      </section>
+
+      <section class="admin-section" id="sec-tips">
+        <h2>النصائح اليومية</h2>
+        <div style="margin:16px 0;display:flex;gap:12px;flex-wrap:wrap;">
+          <input class="v-input" id="newTipText" placeholder="نص النصيحة" style="flex:1;min-width:260px;" />
+          <input class="v-input" id="newTipSource" placeholder="المصدر" style="max-width:180px;" />
+          <button class="v-btn" id="addTipBtn">+ إضافة</button>
+        </div>
+        <table class="admin-table">
+          <thead><tr><th>النص</th><th>المصدر</th><th>إجراءات</th></tr></thead>
+          <tbody id="tipsTbody"></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/firebase.js"></script>
+  <script src="../js/void-core.js"></script>
+  <script src="../js/admin-void.js"></script>
+</body>
+</html>
