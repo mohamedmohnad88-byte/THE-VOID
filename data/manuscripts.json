@@ -1,0 +1,203 @@
+{
+  "version": 1,
+  "manuscripts": [
+    {
+      "id": "picatrix",
+      "title": "Picatrix — غاية الحكيم",
+      "title_en": "Picatrix (Ghayat al-Hakim)",
+      "original": "غاية الحكيم",
+      "date": "القرن 10–11 م (التأليف العربي)؛ ترجمة لاتينية c. 1256",
+      "author": "منسوب إلى 'الماجديت' (مؤلف مجهول)؛ ترجمة لاتينية: Abraham Aretensis",
+      "culture": "الأندلس / العالم العربي (الطب والتنجيم)؛ لاتيني (أوروبا)",
+      "contents": "رسالة في التنجيم، والتعويذات، والخصائص (properties)، والطقوس، وصنع التمائم (أختام كوكبية)، وربط الكواكب بالنباتات والمعادن.",
+      "symbols": "أختام كوكبية، دوائر فلكية، حروف طلسمية، رموز خيميائية.",
+      "images_note": "صور صفحات من النسخ اللاتينية (مثلاً Bibliothèque nationale de France، Gallica).",
+      "reliability": "A (نسخة أصلية رقمية) / B (دراسات أكاديمية)",
+      "sources": [
+        {"title": "Picatrix — Wikipedia", "url": "https://en.wikipedia.org/wiki/Picatrix", "type": "encyclopedia"},
+        {"title": "Gallica — Bibliothèque nationale de France", "url": "https://gallica.bnf.fr/", "type": "library"},
+        {"title": "World History Encyclopedia — Picatrix", "url": "https://www.worldhistory.org/Picatrix/", "type": "encyclopedia"}
+      ],
+      "distinction": "موثق تاريخياً: نص واقعي من القرون الوسطى. الاعتقاد (أن الطقوس تنتج تأثيرات خارقة) غير مثبت. لا دليل على قدرات خارقة."
+    },
+    {
+      "id": "key-solomon",
+      "title": "Clavicula Salomonis — مفتاح سليمان",
+      "title_en": "Key of Solomon",
+      "original": "Clavicula Salomonis",
+      "date": "القرن 14–15 م (أقدم نسخ)",
+      "author": "منسوب زوراً إلى الملك سليمان",
+      "culture": "أوروبا (السحر (necromancy) والطقوس (ceremonial magic))",
+      "contents": "أختام (pentacles) كوكبية، طقوس استحضار، أدعية، تعليمات إعداد أدوات (سيف، عصا، رداء).",
+      "symbols": "أختام سليمان (Pentacles)، رموز كوكبية، دوائر سحرية.",
+      "reliability": "B",
+      "sources": [
+        {"title": "Key of Solomon — Wikipedia", "url": "https://en.wikipedia.org/wiki/Key_of_Solomon", "type": "encyclopedia"},
+        {"title": "Internet Archive", "url": "https://archive.org/search?query=key+of+solomon", "type": "archive"}
+      ],
+      "distinction": "ال attribution إلى سليمان أسطورة. النص تاريخي واقعي. التأثيرات المزعومة (استحضار كيانات) اعتقاد، لا دليل."
+    },
+    {
+      "id": "lesser-key",
+      "title": "Lemegeton — المفتاح الأصغر",
+      "title_en": "Lesser Key of Solomon (Lemegeton)",
+      "original": "Lemegeton Clavicula Salomonis",
+      "date": "القرن 17 م (تجميع)",
+      "author": "مجهول (تجميع لنصوص أقدم)",
+      "culture": "أوروبا",
+      "contents": "Ars Goetia (72 شيطاناً وأختامهم)، Ars Theurgia-Goetia، Ars Paulina، Ars Almadel، Ars Notoria.",
+      "symbols": "أختام 72 كيان، دوائر استحضار، مثلثات.",
+      "reliability": "B",
+      "sources": [
+        {"title": "Lesser Key of Solomon — Wikipedia", "url": "https://en.wikipedia.org/wiki/Lesser_Key_of_Solomon", "type": "encyclopedia"},
+        {"title": "Internet Archive", "url": "https://archive.org/search?query=lesser+key+solomon", "type": "archive"}
+      ],
+      "distinction": "الكيانات (شياطين) اعتقادات دينية/أساطير. النص تاريخي. لا دليل على قدرات خارقة."
+    },
+    {
+      "id": "grimorium-verum",
+      "title": "Grimorium Verum — كتاب الحقيقة",
+      "title_en": "Grimorium Verum",
+      "original": "Grimorium Verum",
+      "date": "القرن 18 م (أقدم نسخة 1750?)",
+      "author": "منسوب زوراً إلى 'ألبيوس' (Alibeck)",
+      "culture": "أوروبا (فرنسا/إيطاليا)",
+      "contents": "طقوس، استحضارات، أختام، علاقات مع 'شياطين' (lucifuge rofocale).",
+      "symbols": "أختام، دوائر، توقيعات (signatures).",
+      "reliability": "C",
+      "sources": [
+        {"title": "Grimorium Verum — Wikipedia", "url": "https://en.wikipedia.org/wiki/Grimorium_Verum", "type": "encyclopedia"}
+      ],
+      "distinction": "أسطورة/اعتقاد. لا دليل تاريخي على تأثيرات. ممارسات خطرة (حرمان، نباتات سامة) موثقة كتحذير."
+    },
+    {
+      "id": "heptameron",
+      "title": "Heptameron — السباعية",
+      "title_en": "Heptameron",
+      "original": "Heptameron, or Magical Elements",
+      "date": "القرن 15–16 م",
+      "author": "منسوب إلى Petrus de Abano (مشكوك)",
+      "culture": "أوروبا",
+      "contents": "طقوس لأيام الأسبوع، أدعية، استحضارات أرواح (angels/spirits).",
+      "symbols": "أختام كوكبية، دوائر، أحرف عبرية.",
+      "reliability": "B/C",
+      "sources": [
+        {"title": "Heptameron — Wikipedia", "url": "https://en.wikipedia.org/wiki/Heptameron_(grimoire)", "type": "encyclopedia"}
+      ],
+      "distinction": "نص تاريخي. التأثيرات اعتقاد."
+    },
+    {
+      "id": "sworn-honorius",
+      "title": "Sworn Book of Honorius — كتاب أونورياس",
+      "title_en": "Sworn Book of Honorius",
+      "original": "Liber Iuratus Honorii",
+      "date": "القرن 13–14 م",
+      "author": "منسوب إلى Honorius of Thebes",
+      "culture": "أوروبا (السحر (necromancy))",
+      "contents": "طقوس، رؤى، أختام، معرفة 'أسماء الله' (onomancy).",
+      "symbols": "أختام، دوائر، رموز.",
+      "reliability": "B",
+      "sources": [
+        {"title": "Sworn Book of Honorius — Wikipedia", "url": "https://en.wikipedia.org/wiki/Sworn_Book_of_Honorius", "type": "encyclopedia"}
+      ],
+      "distinction": "نص تاريخي. الاعتقاد (رؤية الله) غير مثبت."
+    },
+    {
+      "id": "sefer-raziel",
+      "title": "Sefer Raziel HaMalakh — سفر رازئيل الملاك",
+      "title_en": "Sefer Raziel HaMalakh",
+      "original": "ספר רזיאל המלאך",
+      "date": "القرن 13–14 م (تجميع أقدم)",
+      "author": "منسوب إلى Raziel (ملاك)",
+      "culture": "يهودية (السحر (practical Kabbalah))",
+      "contents": "أسماء الله، طقوس، تعويذات، خصائص الأشياء.",
+      "symbols": "أختام عبرية، دوائر، أحرف.",
+      "reliability": "B",
+      "sources": [
+        {"title": "Sefer Raziel — Wikipedia", "url": "https://en.wikipedia.org/wiki/Sefer_Raziel_HaMalakh", "type": "encyclopedia"}
+      ],
+      "distinction": "نص ديني/سحري. التأثيرات اعتقاد."
+    },
+    {
+      "id": "ars-notoria",
+      "title": "Ars Notoria — فن الملاحظات",
+      "title_en": "Ars Notoria",
+      "original": "Ars Notoria",
+      "date": "القرن 13 م",
+      "author": "مجهول",
+      "culture": "أوروبا",
+      "contents": "صلوات ورسوم (figures) للحصول على معرفة (memory, eloquence).",
+      "symbols": "رسوم هندسية (figures)، أحرف، دوائر.",
+      "reliability": "B",
+      "sources": [
+        {"title": "Ars Notoria — Wikipedia", "url": "https://en.wikipedia.org/wiki/Ars_Notoria", "type": "encyclopedia"}
+      ],
+      "distinction": "نص تاريخي. 'الحصول على معرفة' اعتقاد (placebo/إيحاء)."
+    },
+    {
+      "id": "corpus-hermeticum",
+      "title": "Corpus Hermeticum — مجموعة هرمس",
+      "title_en": "Corpus Hermeticum",
+      "original": "Corpus Hermeticum",
+      "date": "القرن 1–3 م (النصوص)؛ ترجمة 1460s",
+      "author": "منسوب إلى Hermes Trismegistus",
+      "culture": "مصر/يونان (هرمسية)",
+      "contents": "حوارات فلسفية/دينية عن الله، العقل (Nous)، الخلاص.",
+      "symbols": "رموز هرمسية (كادوسيوس، etc).",
+      "reliability": "A/B",
+      "sources": [
+        {"title": "Corpus Hermeticum — Wikipedia", "url": "https://en.wikipedia.org/wiki/Corpus_Hermeticum", "type": "encyclopedia"},
+        {"title": "Internet Archive", "url": "https://archive.org/search?query=corpus+hermeticum", "type": "archive"}
+      ],
+      "distinction": "فلسفة/دين تاريخي. لا ادعاء قدرات خارقة."
+    },
+    {
+      "id": "emerald-tablet",
+      "title": "Emerald Tablet — اللوح الزمردي",
+      "title_en": "Emerald Tablet",
+      "original": "Tabula Smaragdina",
+      "date": "القرن 6–8 م (أقدم نسخة عربية)",
+      "author": "منسوب إلى Hermes Trismegistus",
+      "culture": "الخيمياء (عربي/لاتيني)",
+      "contents": "نص قصير: 'كما فوق، كذلك تحت' (As above, so below).",
+      "symbols": "نص، رموز خيميائية لاحقة.",
+      "reliability": "B",
+      "sources": [
+        {"title": "Emerald Tablet — Wikipedia", "url": "https://en.wikipedia.org/wiki/Emerald_Tablet", "type": "encyclopedia"}
+      ],
+      "distinction": "نص خيميائي. مبدأ 'كما فوق так dưới' فلسفي/رمزي."
+    },
+    {
+      "id": "pgm",
+      "title": "Greek Magical Papyri (PGM)",
+      "title_en": "Greek Magical Papyri",
+      "original": "Παπύρι μαγικά",
+      "date": "القرن 2 ق.م – 5 م",
+      "author": "مجهول (ممارسات سحرية (magical practices))",
+      "culture": "مصر (الهلنستية (Hellenistic))",
+      "contents": "تعويذات، طقوس، حب، لعنة، حماية، تعاويذ.",
+      "symbols": "charaktēres (حروف سحرية)، أختام، رموز.",
+      "reliability": "A",
+      "sources": [
+        {"title": "Greek Magical Papyri — Wikipedia", "url": "https://en.wikipedia.org/wiki/Greek_Magical_Papyri", "type": "encyclopedia"}
+      ],
+      "distinction": "وثائق تاريخية. التأثيرات اعتقاد/إيحاء."
+    },
+    {
+      "id": "munich-necromancy",
+      "title": "Munich Handbook of Necromancy",
+      "title_en": "Munich Handbook of Necromancy",
+      "original": "Munich, Clm 849 (Necromancer's Handbook)",
+      "date": "القرن 15 م",
+      "author": "مجهول",
+      "culture": "أوروبا (السحر (necromancy))",
+      "contents": "طقوس استحضار 'أرواح' (spirits)، نبيذ، نباتات سامة (تحذير).",
+      "symbols": "دوائر، أختام، نبيذ.",
+      "reliability": "B",
+      "sources": [
+        {"title": "Munich Handbook — Wikipedia", "url": "https://en.wikipedia.org/wiki/Munich_Handbook_of_Necromancy", "type": "encyclopedia"}
+      ],
+      "distinction": "نص تاريخي. الممارسات خطرة (سهر، حرمان، نباتات سامة) — تُعرض كتحذير."
+    }
+  ]
+}

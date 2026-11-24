@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THE VOID — التجارب</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700&family=Cinzel:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/void.css" />
+</head>
+<body>
+  <canvas id="nebula"></canvas>
+  <nav class="v-nav">
+    <div class="v-nav-inner">
+      <a href="index.html" class="v-brand">
+        <svg class="sigil" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1"><circle cx="13" cy="13" r="12"/><circle cx="13" cy="13" r="6"/><path d="M13 1 L13 25 M1 13 L25 13"/></svg>
+        THE VOID
+      </a>
+      <button class="v-nav-toggle" aria-label="القائمة">&#9776;</button>
+      <div class="v-nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="library.html">المكتبة</a>
+        <a href="experiences.html" class="active">التجارب</a>
+        <a href="path.html">الصعود</a>
+        <a href="admin/login.html">الإدارة</a>
+      </div>
+      <button id="langToggle" class="v-btn" style="padding:6px 12px;font-size:0.7rem;">EN</button>
+    </div>
+  </nav>
+  <main class="v-section">
+    <div class="v-container">
+      <span class="v-eyebrow v-mono">التجارب التفاعلية</span>
+      <h1>THE MIRROR · THE MIND LAB · THE UNKNOWN · THE DAILY PROPHECY.</h1>
+
+      <section class="v-card" style="margin-top:32px;">
+        <h2>THE MIRROR</h2>
+        <p>أسئلة تأمل. لا تشخيص.</p>
+        <div id="mirrorQ"></div>
+        <button class="v-btn" id="mirrorNext" style="margin-top:12px;">التالي</button>
+      </section>
+
+      <section class="v-card" style="margin-top:32px;">
+        <h2>THE MIND LAB</h2>
+        <p>تجربة بسيطة: تأثير الإطار (Framing).</p>
+        <p id="framingQ"></p>
+        <button class="v-btn" data-fr="a">الخيار A</button>
+        <button class="v-btn" data-fr="b">الخيار B</button>
+        <p id="framingRes" style="margin-top:12px;"></p>
+      </section>
+
+      <section class="v-card" style="margin-top:32px;">
+        <h2>THE UNKNOWN</h2>
+        <p>ظواهر نفسية: الإيحاء، Barnum، Cold Reading، الامتثال.</p>
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Barnum_effect" target="_blank">تأثير Barnum</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Cold_reading" target="_blank">Cold Reading</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Confirmation_bias" target="_blank">التحيز التأكيدي</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Conformity" target="_blank">الامتثال</a></li>
+        </ul>
+      </section>
+
+      <section class="v-card" style="margin-top:32px;">
+        <h2>THE DAILY PROPHECY</h2>
+        <p id="prophecyText" style="font-size:1.3rem;font-family:var(--font-display);color:var(--v-silver-bright);"></p>
+        <p id="prophecySrc" class="v-mono"></p>
+      </section>
+    </div>
+  </main>
+  <footer class="v-footer"><div class="v-container"><p>THE VOID</p></div></footer>
+  <div class="v-settings"><button aria-label="الإعدادات">&#9881;</button><div class="v-settings-panel"><label>تقليل الحركة <input type="checkbox" data-setting="reduceMotion" /></label><label>الصوت <input type="checkbox" data-setting="sound" /></label></div></div>
+  <div class="v-toast"></div>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/void-core.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/character.js"></script>
+  <script>
+    VOID.initCommon();
+    const mirrorQuestions = VOID.isAr() ? [
+      'ما الفكرة التي تكررها لنفسك دون دليل؟',
+      'متى آخر مرة قلت "لا" دون شرح؟',
+      'أي مشاعر تتجنبها بالانشغال؟',
+      'من تود أن تكون لو لم تخف من حكم الآخرين؟'
+    ] : [
+      'Which thought do you repeat without evidence?',
+      'When did you last say "no" without explanation?',
+      'Which feelings do you avoid by staying busy?',
+      'Who would you be without fear of others\' judgment?'
+    ];
+    let mi = 0;
+    const mq = document.getElementById('mirrorQ');
+    function showMirror() { mq.innerHTML = `<p style="font-size:1.2rem;">${VOID.esc(mirrorQuestions[mi])}</p>`; }
+    showMirror();
+    document.getElementById('mirrorNext').addEventListener('click', () => { mi = (mi+1)%mirrorQuestions.length; showMirror(); VOID.blip(520); });
+
+    // framing
+    document.getElementById('framingQ').textContent = VOID.isAr()
+      ? 'برنامج: 90% نجاح vs 10% فشل — أيهما تفضل؟'
+      : 'Program: 90% success vs 10% failure — which do you prefer?';
+    document.querySelectorAll('[data-fr]').forEach(b => b.addEventListener('click', () => {
+      document.getElementById('framingRes').textContent = VOID.isAr()
+        ? 'كلاهما نفس النتيجة؛ الإطار (framing) يغير الاختيار. هذا هو تأثير الإطار.'
+        : 'Both are identical; framing changes choice. This is the framing effect.';
+      VOID.blip(330);
+    }));
+
+    // daily prophecy
+    VOID.loadTips().then(tips => {
+      const t = tips[Math.floor(Math.random()*tips.length)];
+      document.getElementById('prophecyText').textContent = t.text;
+      document.getElementById('prophecySrc').textContent = '— ' + (t.source || 'THE VOID');
+    });
+  </script>
+</body>
+</html>

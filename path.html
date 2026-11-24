@@ -22,7 +22,11 @@
       <div class="v-nav-links">
         <a href="index.html">الرئيسية</a>
         <a href="library.html">المكتبة</a>
-        <a href="path.html">مسار الصعود</a>
+        <a href="manuscripts.html">الأرشيف</a>
+        <a href="experiences.html">التجارب</a>
+        <a href="forbidden.html">المحظور</a>
+        <a href="vault.html">THE VAULT</a>
+        <a href="path.html">الصعود</a>
         <a href="admin/login.html">الإدارة</a>
       </div>
       <button id="langToggle" class="v-btn" style="padding:6px 12px;font-size:0.7rem;">EN</button>
@@ -34,8 +38,20 @@
       <span class="v-eyebrow v-mono">مسار الصعود</span>
       <h1>خمس مراحل للعقل.</h1>
       <p style="max-width:720px;color:var(--v-text-muted);margin-bottom:48px;">
-        التقدم محفوظ في متصفحك. كل مرحلة تفتح مقالات وتمارين.
+        التقدم محفوظ في متصفحك. كل مرحلة تفتح مقالات وتمارين. THE ANCIENT HUMAN يعكس تقدمك.
       </p>
+
+      <div class="v-grid v-grid-2" style="align-items:center;margin-bottom:48px;">
+        <div id="ancientHumanSlot"></div>
+        <div>
+          <div class="level-badge" id="levelNumber">01</div>
+          <div class="level-meta" id="levelName">الاستيقاظ</div>
+          <p id="levelDesc" style="margin-top:16px;color:var(--v-text-muted);"></p>
+          <div class="v-progress" style="margin-top:24px;"><div class="v-progress-bar" id="overallBar" style="width:0%"></div></div>
+          <p class="v-mono" style="margin-top:8px;" id="overallText"></p>
+        </div>
+      </div>
+
       <div id="stages"></div>
     </div>
   </main>
@@ -59,6 +75,8 @@
   <script src="js/config.js"></script>
   <script src="js/firebase.js"></script>
   <script src="js/void-core.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/character.js"></script>
   <script src="js/path.js"></script>
 </body>
 </html>

@@ -11,6 +11,17 @@
   <link rel="stylesheet" href="css/void.css" />
 </head>
 <body>
+  <div id="introOverlay" class="intro-overlay" style="display:none;">
+    <canvas id="introStars"></canvas>
+    <div class="intro-content">
+      <div class="intro-seal">&#9798;</div>
+      <p class="intro-line">هناك أشياء لا تراها لأنك لم تتعلم كيف تنظر.</p>
+      <h1 class="intro-title intro-line">THE VOID</h1>
+      <p class="intro-sub intro-line">اكتشف أعماق العقل البشري</p>
+      <a href="#" id="introEnter" class="v-btn v-btn-primary intro-line">ادخل إلى المجهول</a>
+    </div>
+    <button id="introSkip" class="intro-skip">تخطي المقدمة</button>
+  </div>
   <canvas id="nebula"></canvas>
 
   <nav class="v-nav">
@@ -23,7 +34,11 @@
       <div class="v-nav-links">
         <a href="index.html">الرئيسية</a>
         <a href="library.html">المكتبة</a>
-        <a href="path.html">مسار الصعود</a>
+        <a href="manuscripts.html">الأرشيف</a>
+        <a href="experiences.html">التجارب</a>
+        <a href="forbidden.html">المحظور</a>
+        <a href="vault.html">THE VAULT</a>
+        <a href="path.html">الصعود</a>
         <a href="admin/login.html">الإدارة</a>
       </div>
       <button id="langToggle" class="v-btn" style="padding:6px 12px;font-size:0.7rem;">EN</button>
@@ -130,6 +145,15 @@
     </section>
   </main>
 
+  <section class="v-section" style="background:rgba(13,7,32,0.3);">
+    <div class="v-container">
+      <div class="v-card" style="text-align:center;">
+        <span class="v-eyebrow v-mono">حارس الأرشيف</span>
+        <p id="wardenText" style="font-size:1.2rem;font-family:var(--font-display);color:var(--v-silver-bright);">...</p>
+      </div>
+    </div>
+  </section>
+
   <footer class="v-footer">
     <div class="v-container">
       <p>THE VOID &mdash; موسوعة سرية للعقل.</p>
@@ -153,6 +177,9 @@
   <script src="js/config.js"></script>
   <script src="js/firebase.js"></script>
   <script src="js/void-core.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/character.js"></script>
+  <script src="js/intro.js"></script>
   <script>
     VOID.initCommon();
     (function(){
@@ -169,6 +196,18 @@
       document.getElementById('tipText').textContent = t.text;
       document.getElementById('tipSource').textContent = '— ' + (t.source || 'THE VOID');
     });
+    const wardenPhrases = VOID.isAr() ? [
+      'أنت تقترب من شيء لا يمكن إلغاؤه.',
+      'الصمت يكبر معك.',
+      'كل مقال هو مرآة.',
+      'الفراغ لا يملأ؛ يُفهم.'
+    ] : [
+      'You approach something irreversible.',
+      'The silence grows with you.',
+      'Every article is a mirror.',
+      'The void is not filled; it is understood.'
+    ];
+    document.getElementById('wardenText').textContent = wardenPhrases[VOID.level()-1] || wardenPhrases[0];
     // lang toggle
     document.getElementById('langToggle').addEventListener('click', () => {
       const cur = localStorage.getItem('v_lang') || 'ar';

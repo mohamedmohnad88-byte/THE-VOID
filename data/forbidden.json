@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "f-ceremonial-invocation",
+      "title": "طقوس الاستحضار (Ceremonial Invocation)",
+      "title_en": "Ceremonial Invocation",
+      "source_book": "Key of Solomon; Lesser Key of Solomon",
+      "as_in_text": "وصف تاريخي: إعداد دائرة، أسماء إلهية، أدعية، استدعاء 'أرواح' (spirits) within a ritual frame. (لا تُعرض خطوات تنفيذية.)",
+      "context": "أوروبا، القرون 14–17. كُتبت لـ 'ماجي' (magi) وممارسين. الكنيسة والسلطات عاملتها كهرطقة/سحر.",
+      "psychology": "الإيحاء، الحرمان الحسي، التوقع، الإيحاء الجماعي، authority framing، trance.",
+      "real_danger": "سهر/صيام (حرمان)، نباتات سامة في 'مرهم الطيران' (flying ointments) — تُعرض كتحذير.",
+      "evidence_status": "موثق تاريخياً (النص) / اعتقاد (التأثير) / لا دليل (قدرات خارقة).",
+      "danger_meter": 3,
+      "sources": [
+        {"title":"Key of Solomon — Wikipedia","url":"https://en.wikipedia.org/wiki/Key_of_Solomon","type":"encyclopedia"},
+        {"title":"Lesser Key of Solomon — Wikipedia","url":"https://en.wikipedia.org/wiki/Lesser_Key_of_Solomon","type":"encyclopedia"}
+      ]
+    },
+    {
+      "id": "f-cold-reading",
+      "title": "قراءة الطالع (Cold Reading)",
+      "title_en": "Cold Reading",
+      "source_book": "Various grimoires; modern practice",
+      "as_in_text": "وصف: استخدام تعميمات (Barnum statements)، ملاحظة لغة الجسد، feedback loop.",
+      "context": "تاريخ العرافة (divination) across cultures.",
+      "psychology": "تأثير Barnum، تأكيد bias، cold reading.",
+      "real_danger": "استغلال مالي/عاطفی.",
+      "evidence_status": "موثق (الآلية النفسية).",
+      "danger_meter": 2,
+      "sources": [
+        {"title":"Cold reading — Wikipedia","url":"https://en.wikipedia.org/wiki/Cold_reading","type":"encyclopedia"}
+      ]
+    },
+    {
+      "id": "f-talismans",
+      "title": "التمائم (Talismans)",
+      "title_en": "Talismans",
+      "source_book": "Picatrix; Key of Solomon",
+      "as_in_text": "وصف: أشياء (أختام، أحجار) يُعتقد أنها تحمل قوى كوكبية.",
+      "context": "التنجيم (astrology) والخيمياء.",
+      "psychology": "تأثير الدواء الوهمي (placebo)، توقع، رمزية.",
+      "real_danger": "لا خطر جسدي (إلا مواد سامة في بعض).",
+      "evidence_status": "اعتقاد (التأثير) / موثق (الاستخدام التاريخي).",
+      "danger_meter": 1,
+      "sources": [
+        {"title":"Talisman — Wikipedia","url":"https://en.wikipedia.org/wiki/Talisman","type":"encyclopedia"}
+      ]
+    },
+    {
+      "id": "f-flying-ointments",
+      "title": "مرهم الطيران (Flying Ointments)",
+      "title_en": "Flying Ointments",
+      "source_book": "Munich Handbook; various",
+      "as_in_text": "وصف تاريخي: مراهم (ointments) يُزعم أنها تُمكّن من 'الطيران' (trance). اعتمدت على نباتات سامة (belladonna, henbane).",
+      "context": "السحر (necromancy) في القرون الوسطى.",
+      "psychology": "إيحاء، تغير إدراك، hallucinations due to toxins.",
+      "real_danger": "سُمّية (toxicity)، خطر جسدي (تحذير).",
+      "evidence_status": "موثق طبياً (الخطر).",
+      "danger_meter": 5,
+      "sources": [
+        {"title":"Flying ointment — Wikipedia","url":"https://en.wikipedia.org/wiki/Flying_ointment","type":"encyclopedia"}
+      ]
+    }
+  ]
+}

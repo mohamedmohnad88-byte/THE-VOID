@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THE VOID — THE VAULT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700&family=Cinzel:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/void.css" />
+</head>
+<body>
+  <canvas id="nebula"></canvas>
+  <nav class="v-nav">
+    <div class="v-nav-inner">
+      <a href="index.html" class="v-brand">
+        <svg class="sigil" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1"><circle cx="13" cy="13" r="12"/><circle cx="13" cy="13" r="6"/><path d="M13 1 L13 25 M1 13 L25 13"/></svg>
+        THE VOID
+      </a>
+      <button class="v-nav-toggle" aria-label="القائمة">&#9776;</button>
+      <div class="v-nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="library.html">المكتبة</a>
+        <a href="manuscripts.html">الأرشيف</a>
+        <a href="vault.html" class="active">THE VAULT</a>
+        <a href="path.html">الصعود</a>
+        <a href="admin/login.html">الإدارة</a>
+      </div>
+      <button id="langToggle" class="v-btn" style="padding:6px 12px;font-size:0.7rem;">EN</button>
+    </div>
+  </nav>
+  <main class="v-section">
+    <div class="v-container">
+      <span class="v-eyebrow v-mono">THE VAULT</span>
+      <h1>آليات التأثير.</h1>
+      <p style="max-width:760px;color:var(--v-text-muted);margin-bottom:32px;">
+        يتفتح بعد المستوى 04. شرح من زاوية الكشف والحماية. بدون scripts لاستخدامها على الآخرين.
+      </p>
+      <div id="gate"></div>
+      <div id="content" style="display:none;"></div>
+    </div>
+  </main>
+  <footer class="v-footer"><div class="v-container"><p>THE VOID</p></div></footer>
+  <div class="v-settings"><button aria-label="الإعدادات">&#9881;</button><div class="v-settings-panel"><label>تقليل الحركة <input type="checkbox" data-setting="reduceMotion" /></label><label>الصوت <input type="checkbox" data-setting="sound" /></label></div></div>
+  <div class="v-toast"></div>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/void-core.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/character.js"></script>
+  <script>
+    VOID.initCommon();
+    const gate = document.getElementById('gate');
+    const content = document.getElementById('content');
+    if (VOID.level() < 4) {
+      gate.innerHTML = `<div class="v-card" style="text-align:center;padding:48px;">
+        <h2>مغلق</h2>
+        <p>يتطلب المستوى 04. أكمل ${4 - VOID.completedCount()} مقالات إضافية.</p>
+        <a href="path.html" class="v-btn">العودة للصعود</a>
+      </div>`;
+    } else {
+      gate.style.display = 'none';
+      content.style.display = 'block';
+      fetch('data/vault.json').then(r=>r.json()).then(j => {
+        content.innerHTML = `<div class="v-grid v-grid-2">` + j.mechanisms.map(m => `
+          <div class="v-card">
+            <div class="v-card-title">${VOID.esc(VOID.t(m,'name'))}</div>
+            <div class="v-card-meta">${VOID.esc(m.source)}</div>
+            <p><strong>${VOID.isAr()?'كيف تعمل:':'How:'}</strong> ${VOID.esc(m.how)}</p>
+            <p><strong>${VOID.isAr()?'الإشارات:':'Signals:'}</strong> ${VOID.esc(m.signals)}</p>
+            <p><strong>${VOID.isAr()?'حالة موثقة:':'Case:'}</strong> ${VOID.esc(m.case)}</p>
+            <p><strong>${VOID.isAr()?'الأثر:':'Impact:'}</strong> ${VOID.esc(m.impact)}</p>
+            <p><strong>${VOID.isAr()?'الدفاع:':'Defense:'}</strong> ${VOID.esc(m.defense)}</p>
+            <p class="v-mono">${VOID.isAr()?'الموثوقية:':'Reliability:'} ${VOID.esc(m.reliability)}</p>
+            <a href="${VOID.esc(m.url)}" target="_blank" rel="noopener" class="v-chip">${VOID.isAr()?'المصدر':'Source'}</a>
+          </div>`).join('') + `</div>`;
+      });
+    }
+  </script>
+</body>
+</html>

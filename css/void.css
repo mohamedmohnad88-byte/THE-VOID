@@ -274,6 +274,61 @@ a:hover { color: var(--v-silver-bright); }
 .v-fade-in { animation: vFadeIn 1.2s var(--ease-cine) both; }
 @keyframes vFadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 
+/* ---------- Cinematic Intro ---------- */
+.intro-overlay {
+  position: fixed; inset: 0; z-index: 200;
+  background: #000;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+.intro-overlay.fade-out { animation: introFadeOut 1.2s var(--ease-cine) forwards; }
+@keyframes introFadeOut { to { opacity: 0; } }
+#introStars { position: absolute; inset: 0; }
+.intro-content { position: relative; z-index: 2; text-align: center; padding: 24px; }
+.intro-seal { font-size: 3rem; color: var(--v-purple-glow); margin-bottom: 24px; opacity: 0; transition: opacity 1s; }
+.intro-line { opacity: 0; transform: translateY(14px); transition: opacity 1.4s var(--ease-cine), transform 1.4s var(--ease-cine); }
+.intro-line.show { opacity: 1; transform: none; }
+.intro-title { font-size: clamp(3rem, 9vw, 7rem); letter-spacing: 0.35em; color: var(--v-silver-bright); text-shadow: 0 0 40px rgba(138,79,255,0.4); }
+.intro-sub { color: var(--v-text-muted); letter-spacing: 0.2em; margin-top: 8px; }
+.intro-skip {
+  position: absolute; bottom: 24px; right: 24px; z-index: 3;
+  background: transparent; border: 1px solid var(--v-border); color: var(--v-text-muted);
+  padding: 8px 16px; font-family: var(--font-ui); font-size: 0.7rem; letter-spacing: 0.16em;
+  text-transform: uppercase; cursor: pointer;
+}
+.intro-skip:hover { color: var(--v-silver-bright); border-color: var(--v-border-strong); }
+
+/* ---------- Ancient Human figure ---------- */
+.ancient-human { width: 100%; max-width: 420px; margin: 0 auto; display: block; }
+.ancient-human svg { width: 100%; height: auto; }
+.ancient-human .ring { transform-origin: center; }
+.ancient-human.level-1 { filter: grayscale(0.6) brightness(0.7); }
+.ancient-human.level-2 { filter: drop-shadow(0 0 8px rgba(138,79,255,0.3)); }
+.ancient-human.level-3 { filter: drop-shadow(0 0 18px rgba(138,79,255,0.5)); }
+.ancient-human.level-4 { filter: drop-shadow(0 0 32px rgba(138,79,255,0.7)); }
+.ancient-human.level-5 { filter: drop-shadow(0 0 48px rgba(138,79,255,0.9)); }
+.ancient-human .limb { transition: transform 1.2s var(--ease-cine); }
+
+/* Ascension level badge */
+.level-badge {
+  font-family: var(--font-display); font-size: clamp(3rem, 8vw, 6rem);
+  color: var(--v-purple-glow); text-align: center; line-height: 1;
+  text-shadow: 0 0 30px rgba(138,79,255,0.5);
+}
+.level-meta { text-align: center; font-family: var(--font-ui); font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--v-text-muted); margin-top: 8px; }
+
+/* Dread / sealed */
+.dread-overlay { pointer-events: none; position: fixed; inset: 0; z-index: 1; mix-blend-mode: multiply; }
+.sealed-chapter { border: 1px solid var(--v-border-strong); padding: 24px; text-align: center; cursor: pointer; transition: all .4s; }
+.sealed-chapter:hover { border-color: var(--v-purple-glow); box-shadow: var(--v-glow); }
+.sealed-chapter.locked { opacity: 0.5; filter: blur(1px); }
+
+/* Vault danger meter */
+.danger-meter { display: inline-flex; gap: 4px; }
+.danger-meter .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--v-border-strong); }
+.danger-meter .dot.on { background: #ff4a6b; box-shadow: 0 0 8px #ff4a6b; }
+
 /* Settings panel */
 .v-settings {
   position: fixed; bottom: 24px; right: 24px; z-index: 60;

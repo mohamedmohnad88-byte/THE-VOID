@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THE VOID — الركن المحظور</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700&family=Cinzel:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/void.css" />
+  <style>
+    .forbidden-gate { text-align:center; padding:64px 24px; border:1px solid #4a101b; background:linear-gradient(180deg,rgba(74,16,27,0.2),rgba(3,2,10,0.9)); }
+    .seal-break { display:inline-block; font-size:4rem; color:#a68a55; cursor:pointer; transition:transform 1s; }
+    .seal-break.broken { transform: rotate(180deg) scale(1.4); opacity:0; }
+  </style>
+</head>
+<body style="background:#050204;">
+  <canvas id="nebula"></canvas>
+  <nav class="v-nav">
+    <div class="v-nav-inner">
+      <a href="index.html" class="v-brand">
+        <svg class="sigil" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1"><circle cx="13" cy="13" r="12"/><circle cx="13" cy="13" r="6"/><path d="M13 1 L13 25 M1 13 L25 13"/></svg>
+        THE VOID
+      </a>
+      <button class="v-nav-toggle" aria-label="القائمة">&#9776;</button>
+      <div class="v-nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="library.html">المكتبة</a>
+        <a href="manuscripts.html">الأرشيف</a>
+        <a href="forbidden.html" class="active">المحظور</a>
+        <a href="path.html">الصعود</a>
+        <a href="admin/login.html">الإدارة</a>
+      </div>
+      <button id="langToggle" class="v-btn" style="padding:6px 12px;font-size:0.7rem;">EN</button>
+    </div>
+  </nav>
+  <main class="v-section">
+    <div class="v-container">
+      <span class="v-eyebrow v-mono" style="color:#a68a55;">⛧ الركن المحظور ⛧</span>
+      <h1 style="color:#a68a55;">المحظور.</h1>
+      <p style="max-width:760px;color:var(--v-text-muted);margin-bottom:32px;">
+        يتفتح بعد المستوى 03. محتوى تاريخي فقط: وصف، سياق، تفسير نفسي، خطر موثق. بدون خطوات تنفيذ.
+      </p>
+      <div id="gate"></div>
+      <div id="content" style="display:none;"></div>
+    </div>
+  </main>
+  <footer class="v-footer"><div class="v-container"><p>THE VOID</p></div></footer>
+  <div class="v-settings"><button aria-label="الإعدادات">&#9881;</button><div class="v-settings-panel"><label>تقليل الحركة <input type="checkbox" data-setting="reduceMotion" /></label><label>الصوت <input type="checkbox" data-setting="sound" /></label></div></div>
+  <div class="v-toast"></div>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/void-core.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/character.js"></script>
+  <script>
+    VOID.initCommon();
+    const gate = document.getElementById('gate');
+    const content = document.getElementById('content');
+    if (VOID.level() < 3) {
+      gate.innerHTML = `
+        <div class="forbidden-gate">
+          <div style="font-size:3rem;color:#a68a55;margin-bottom:16px;">⛧</div>
+          <h2 style="color:#a68a55;">مغلق</h2>
+          <p>يتطلب المستوى 03 (الظل). أكمل ${3 - VOID.completedCount()} مقالات/دروس إضافية.</p>
+          <a href="path.html" class="v-btn">العودة للصعود</a>
+        </div>`;
+    } else {
+      gate.innerHTML = `
+        <div class="forbidden-gate">
+          <div class="seal-break" id="sealBtn">⛧</div>
+          <h2 style="color:#a68a55;">الختم</h2>
+          <p>انقر لكسر الختم.</p>
+        </div>`;
+      document.getElementById('sealBtn').addEventListener('click', async () => {
+        document.getElementById('sealBtn').classList.add('broken');
+        VOID.blip(220);
+        setTimeout(async () => {
+          gate.style.display = 'none';
+          content.style.display = 'block';
+          const r = await fetch('data/forbidden.json'); const j = await r.json();
+          content.innerHTML = `<div class="v-grid v-grid-2">` + j.entries.map(e => `
+            <div class="v-card" style="border-color:#4a101b;">
+              <div class="v-card-title" style="color:#a68a55;">${VOID.esc(VOID.t(e,'title'))}</div>
+              <div class="v-card-meta">${VOID.esc(e.source_book)}</div>
+              <p><strong>${VOID.isAr()?'كما ورد:':'As in text:'}</strong> ${VOID.esc(e.as_in_text)}</p>
+              <p><strong>${VOID.isAr()?'السياق:':'Context:'}</strong> ${VOID.esc(e.context)}</p>
+              <p><strong>${VOID.isAr()?'النفس:':'Psychology:'}</strong> ${VOID.esc(e.psychology)}</p>
+              <p><strong>${VOID.isAr()?'الخطر:':'Danger:'}</strong> ${VOID.esc(e.real_danger)}</p>
+              <p><strong>${VOID.isAr()?'الحالة:':'Status:'}</strong> ${VOID.esc(e.evidence_status)}</p>
+              <div class="danger-meter">${[1,2,3,4,5].map(n=>`<span class="dot ${n<=e.danger_meter?'on':''}"></span>`).join('')}</div>
+              <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+                ${(e.sources||[]).map(s=>`<a href="${VOID.esc(s.url)}" target="_blank" rel="noopener" class="v-chip">${VOID.esc(s.title)}</a>`).join('')}
+              </div>
+            </div>`).join('') + `</div>`;
+        }, 900);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "symbols": [
+    {"id":"sun","symbol":"☉","name":"الشمس","name_en":"Sun","earliest":"العصور القديمة (مصر/يونان)","culture":"فلك/خيمياء","meaning":"الذهب، الروح، النور.","doc":"PGM، مخطوطات خيميائية.","reliability":"A/B","source":"https://en.wikipedia.org/wiki/Astrological_symbols"},
+    {"id":"moon","symbol":"☽","name":"القمر","name_en":"Moon","earliest":"العصور القديمة","culture":"فلك/خيمياء","meaning":"الفضة، الروح (anima)، التغير.","doc":"PGM، خيمياء.","reliability":"A/B","source":"https://en.wikipedia.org/wiki/Astrological_symbols"},
+    {"id":"mercury","symbol":"☿","name":"عطارد","name_en":"Mercury","earliest":"العصور القديمة","culture":"فلك/خيمياء","meaning":"الزئبق، الوسيط، التحول.","doc":"خيمياء.","reliability":"A/B","source":"https://en.wikipedia.org/wiki/Astrological_symbols"},
+    {"id":"venus","symbol":"♀","name":"الزهرة","name_en":"Venus","earliest":"العصور القديمة","culture":"فلك/خيمياء","meaning":"النحاس، الحب.","doc":"فلك.","reliability":"A/B","source":"https://en.wikipedia.org/wiki/Astrological_symbols"},
+    {"id":"mars","symbol":"♂","name":"المريخ","name_en":"Mars","earliest":"العصور القديمة","culture":"فلك/خيمياء","meaning":"الحديد، الحرب.","doc":"فلك.","reliability":"A/B","source":"https://en.wikipedia.org/wiki/Astrological_symbols"},
+    {"id":"jupiter","symbol":"♃","name":"المشتري","name_en":"Jupiter","earliest":"العصور القديمة","culture":"فلك/خيمياء","meaning":"القصدير، الحظ.","doc":"فلك.","reliability":"A/B","source":"https://en.wikipedia.org/wiki/Astrological_symbols"},
+    {"id":"saturn","symbol":"♄","name":"زحل","name_en":"Saturn","earliest":"العصور القديمة","culture":"فلك/خيمياء","meaning":"الرصاص، الوقت، melancholia.","doc":"فلك/خيمياء.","reliability":"A/B","source":"https://en.wikipedia.org/wiki/Astrological_symbols"},
+    {"id":"sulphur","symbol":"🜍","name":"الكبريت","name_en":"Sulphur","earliest":"القرون الوسطى","culture":"خيمياء","meaning":"الروح، الاشتعال.","doc":"خيمياء.","reliability":"B","source":"https://en.wikipedia.org/wiki/Alchemical_symbol"},
+    {"id":"salt","symbol":"🜔","name":"الملح","name_en":"Salt","earliest":"القرون الوسطى","culture":"خيمياء","meaning":"الجسد، الثبات.","doc":"خيمياء.","reliability":"B","source":"https://en.wikipedia.org/wiki/Alchemical_symbol"},
+    {"id":"aqua","symbol":"🜄","name":"الماء","name_en":"Water","earliest":"العصور القديمة","culture":"العناصر","meaning":"الانفعال، التدفق.","doc":"خيمياء.","reliability":"B","source":"https://en.wikipedia.org/wiki/Alchemical_symbol"},
+    {"id":"fire","symbol":"🜂","name":"النار","name_en":"Fire","earliest":"العصور القديمة","culture":"العناصر","meaning":"الطاقة، التحول.","doc":"خيمياء.","reliability":"B","source":"https://en.wikipedia.org/wiki/Alchemical_symbol"},
+    {"id":"pentagram","symbol":"⛧","name":"الختم (Pentacle)","name_en":"Pentacle","earliest":"القرون الوسطى","culture":"سحر طقسي","meaning":"حماية/استدعاء (اعتقاد).","doc":"Key of Solomon.","reliability":"B","source":"https://en.wikipedia.org/wiki/Pentacle"},
+    {"id":"ouroboros","symbol":"∞","name":"أوروبوروس","name_en":"Ouroboros","earliest":"مصر (1500 ق.م)","culture":"هرمسية/خيمياء","meaning":"الدوام، الأبدية.","doc":"Papyrus of the Ouroboros.","reliability":"A/B","source":"https://en.wikipedia.org/wiki/Ouroboros"}
+  ]
+}

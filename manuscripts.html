@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THE VOID — أرشيف المخطوطات</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700&family=Cinzel:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/void.css" />
+</head>
+<body>
+  <canvas id="nebula"></canvas>
+  <nav class="v-nav">
+    <div class="v-nav-inner">
+      <a href="index.html" class="v-brand">
+        <svg class="sigil" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1"><circle cx="13" cy="13" r="12"/><circle cx="13" cy="13" r="6"/><path d="M13 1 L13 25 M1 13 L25 13"/></svg>
+        THE VOID
+      </a>
+      <button class="v-nav-toggle" aria-label="القائمة">&#9776;</button>
+      <div class="v-nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="library.html">المكتبة</a>
+        <a href="manuscripts.html">الأرشيف</a>
+        <a href="path.html">الصعود</a>
+        <a href="admin/login.html">الإدارة</a>
+      </div>
+      <button id="langToggle" class="v-btn" style="padding:6px 12px;font-size:0.7rem;">EN</button>
+    </div>
+  </nav>
+  <main class="v-section">
+    <div class="v-container">
+      <span class="v-eyebrow v-mono">أرشيف المخطوطات</span>
+      <h1>المخطوطات والرموز.</h1>
+      <p style="max-width:760px;color:var(--v-text-muted);margin-bottom:32px;">
+        نصوص تاريخية حقيقية من مكتبات العالم. كل مدخل يحتوي على اسم أصلي، تاريخ، مصدر، وروابط. لا ادعاءات خارقة.
+      </p>
+      <div id="manuscriptList" class="v-grid v-grid-2"></div>
+      <div class="v-divider"></div>
+      <span class="v-eyebrow v-mono">موسوعة الرموز</span>
+      <h2>الرموز.</h2>
+      <div id="symbolList" class="v-grid v-grid-4" style="margin-top:24px;"></div>
+    </div>
+  </main>
+  <footer class="v-footer"><div class="v-container"><p>THE VOID</p></div></footer>
+  <div class="v-settings"><button aria-label="الإعدادات">&#9881;</button><div class="v-settings-panel"><label>تقليل الحركة <input type="checkbox" data-setting="reduceMotion" /></label><label>الصوت <input type="checkbox" data-setting="sound" /></label></div></div>
+  <div class="v-toast"></div>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/void-core.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/character.js"></script>
+  <script>
+    VOID.initCommon();
+    async function load() {
+      const mr = await fetch('data/manuscripts.json'); const mj = await mr.json();
+      const list = document.getElementById('manuscriptList');
+      list.innerHTML = mj.manuscripts.map(m => `
+        <div class="v-card">
+          <div class="v-card-title">${VOID.esc(VOID.t(m,'title'))}</div>
+          <div class="v-card-meta">${VOID.esc(m.date)} &middot; ${VOID.esc(m.culture)}</div>
+          <p><strong>${VOID.isAr()?'الأصلي:':'Original:'}</strong> ${VOID.esc(m.original)}</p>
+          <p><strong>${VOID.isAr()?'المؤلف/النسبة:':'Author:'}</strong> ${VOID.esc(m.author)}</p>
+          <p><strong>${VOID.isAr()?'المحتويات:':'Contents:'}</strong> ${VOID.esc(m.contents)}</p>
+          <p><strong>${VOID.isAr()?'الرموز:':'Symbols:'}</strong> ${VOID.esc(m.symbols)}</p>
+          <p><strong>${VOID.isAr()?'التمييز:':'Distinction:'}</strong> ${VOID.esc(m.distinction)}</p>
+          <p class="v-mono" style="margin-top:8px;">${VOID.isAr()?'الموثوقية:':'Reliability:'} ${VOID.esc(m.reliability)}</p>
+          <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+            ${(m.sources||[]).map(s=>`<a href="${VOID.esc(s.url)}" target="_blank" rel="noopener" class="v-chip">${VOID.esc(s.title)}</a>`).join('')}
+          </div>
+        </div>`).join('');
+      const sr = await fetch('data/symbols.json'); const sj = await sr.json();
+      const slist = document.getElementById('symbolList');
+      slist.innerHTML = sj.symbols.map(s => `
+        <div class="v-card" style="text-align:center;">
+          <div style="font-size:2.4rem;color:var(--v-purple-glow);">${VOID.esc(s.symbol)}</div>
+          <div class="v-card-title" style="font-size:1rem;margin-top:8px;">${VOID.esc(VOID.t(s,'name'))}</div>
+          <div class="v-card-meta">${VOID.esc(s.earliest)}</div>
+          <p style="font-size:0.85rem;color:var(--v-text-muted);">${VOID.esc(s.meaning)}</p>
+          <a href="${VOID.esc(s.source)}" target="_blank" rel="noopener" class="v-mono" style="font-size:0.65rem;">${VOID.isAr()?'المصدر':'Source'}</a>
+        </div>`).join('');
+    }
+    load();
+  </script>
+</body>
+</html>

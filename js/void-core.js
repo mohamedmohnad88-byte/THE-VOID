@@ -82,7 +82,27 @@
       if (!o[stage].includes(articleId)) o[stage].push(articleId);
       this.set(o);
     },
-    count(stage) { const o = this.get(); return (o[stage] || []).length; }
+    count(stage) { const o = this.get(); return (o[stage] || []).length; },
+    total() { const o = this.get(); let n=0; Object.values(o).forEach(a=>{ if(Array.isArray(a)) n+=a.length; }); return n; }
+  };
+  V.completedCount = function () { return V.progress.total(); };
+  V.level = function () {
+    const n = V.completedCount();
+    if (n >= 17) return 5;
+    if (n >= 12) return 4;
+    if (n >= 7) return 3;
+    if (n >= 3) return 2;
+    return 1;
+  };
+  V.levelInfo = function () {
+    const names = V.isAr()
+      ? ['الاستيقاظ','الاكتشاف','الظل','الارتقاء','الفراغ']
+      : ['Awakening','Discovery','Shadow','Ascension','The Void'];
+    const descs = V.isAr()
+      ? ['حبر باهت، ورق معتق، رموز بسيطة.','نقوش خيميائية، توهج بنفسجي، حركة بسيطة.','أجزاء تتحول لظلال، عمق أكبر.','هالة كونية، تفاصيل هندسية معقدة.','كيان كوني مظلم، مجرة تدور خلفه.']
+      : ['Faint ink, aged paper, simple symbols.','Alchemical inscriptions, violet glow, subtle motion.','Parts become shadow, deeper background.','Cosmic halo, complex geometry.','Dark cosmic entity, galaxy rotating behind.'];
+    const L = V.level();
+    return { level: L, name: names[L-1], desc: descs[L-1] };
   };
 
   // ---------- Articles ----------
@@ -110,6 +130,11 @@
   V.lf = function (obj, field) {
     if (!obj) return '';
     return obj[field] != null ? obj[field] : '';
+  };
+  V.t = function (obj, field) {
+    if (!obj) return '';
+    if (V.isAr()) return obj[field] != null ? obj[field] : (obj[field + '_en'] != null ? obj[field + '_en'] : '');
+    return (obj[field + '_en'] != null ? obj[field + '_en'] : (obj[field] != null ? obj[field] : ''));
   };
 
   V.loadArticles = async function () {
@@ -152,6 +177,15 @@
     { id: 'decision', name: 'اتخاذ القرار', name_en: 'Decision Making', desc: 'الاختيار في ظل عدم اليقين.' },
     { id: 'biases', name: 'الانحيازات المعرفية', name_en: 'Cognitive Biases', desc: 'الأخطاء المنهجية في التفكير.' },
     { id: 'stoic', name: 'الفلسفة الرواقية', name_en: 'Stoic Philosophy', desc: 'انضباط قديم لعقول حديثة.' },
+    { id: 'darkpsych', name: 'السيكولوجيا المظلمة', name_en: 'Dark Psychology', desc: 'فهم التلاعب والحماية منه.' },
+    { id: 'mastery', name: 'إتقان العقل', name_en: 'Mental Mastery', desc: 'تنظيم الانفعالات والثبات.' },
+    { id: 'humannature', name: 'طبيعة الإنسان', name_en: 'Human Nature', desc: 'دوافع وسلوك الجماعات.' },
+    { id: 'shadow', name: 'الظل', name_en: 'The Shadow', desc: 'الغضب، المخاوف، التأمل الذاتي.' },
+    { id: 'philosophy', name: 'فلسفة الفراغ', name_en: 'Philosophy of the Void', desc: 'الوجودية، نيتشه، الحرية.' },
+    { id: 'manuscripts', name: 'أرشيف المخطوطات', name_en: 'Manuscript Archive', desc: 'مخطوطات تاريخية ورموز.' },
+    { id: 'symbols', name: 'موسوعة الرموز', name_en: 'Symbol Encyclopedia', desc: 'رموز خيميائية وفلكية.' },
+    { id: 'forbidden', name: 'الركن المحظور', name_en: 'Forbidden Archive', desc: 'تقنيات تاريخية (Level 3).' },
+    { id: 'vault', name: 'THE VAULT', name_en: 'The Vault', desc: 'آليات التأثير والتحكم (Level 4).' },
   ];
   V.CATEGORIES = V.CATEGORIES_DEFAULT.slice();
 
@@ -269,13 +303,32 @@
     const snd = panel.querySelector('[data-setting="sound"]');
     if (rm) { rm.checked = settings.reduceMotion; rm.addEventListener('change', () => { settings.reduceMotion = rm.checked; applySettings(); if (rm.checked) { const c = document.getElementById('nebula'); if (c) c.style.display='none'; } else { V.initNebula(); } }); }
     if (snd) { snd.checked = settings.sound; snd.addEventListener('change', () => { settings.sound = snd.checked; applySettings(); }); }
+    // Quiet mode button
+    if (!panel.querySelector('[data-quiet]')) {
+      const qb = document.createElement('button');
+      qb.className = 'v-btn'; qb.style.cssText = 'width:100%;margin-top:8px;padding:8px;font-size:0.7rem;';
+      qb.textContent = V.isAr() ? 'الوضع الهادئ' : 'Quiet Mode';
+      qb.setAttribute('data-quiet','1');
+      panel.appendChild(qb);
+      qb.addEventListener('click', () => {
+        settings.reduceMotion = true; settings.sound = false;
+        applySettings();
+        const c = document.getElementById('nebula'); if (c) c.style.display = 'none';
+        if (window.VOID.sound) window.VOID.sound.set(false);
+        V.toast(V.isAr() ? 'تم تفعيل الوضع الهادئ' : 'Quiet mode on');
+      });
+    }
   };
 
   V.initCommon = function () {
     V.applyLang();
     V.wireNav();
     V.wireSettings();
+    document.body.classList.add('v-level-' + V.level());
     if (!settings.reduceMotion) V.initNebula();
+    // dread: higher levels darken nebula
+    const neb = document.getElementById('nebula');
+    if (neb) neb.style.opacity = Math.max(0.25, 0.55 - (V.level()-1)*0.07);
     // wire lang toggle if present
     const lt = document.getElementById('langToggle');
     if (lt) {
