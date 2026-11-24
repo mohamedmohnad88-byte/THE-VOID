@@ -94,7 +94,10 @@
       <div class="v-container">
         <span class="v-eyebrow v-mono">مسار الصعود</span>
         <h2>خمس مراحل للعقل.</h2>
-        <div id="stagePreview" class="v-grid" style="margin-top:32px;"></div>
+        <div class="v-grid v-grid-2" style="align-items:center;margin-top:32px;">
+          <div id="homeHuman"></div>
+          <div id="stagePreview" class="v-grid"></div>
+        </div>
         <div style="margin-top:32px;">
           <a href="path.html" class="v-btn">عرض المسار كاملاً</a>
         </div>
@@ -182,6 +185,7 @@
   <script src="js/intro.js"></script>
   <script>
     VOID.initCommon();
+    VOID.renderAncientHuman('#homeHuman', VOID.level());
     (function(){
       const el = document.getElementById('stagePreview');
       VOID.STAGES.forEach(s => {
