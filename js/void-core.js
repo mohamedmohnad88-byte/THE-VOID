@@ -301,8 +301,8 @@
     btn.addEventListener('click', () => panel.classList.toggle('open'));
     const rm = panel.querySelector('[data-setting="reduceMotion"]');
     const snd = panel.querySelector('[data-setting="sound"]');
-    if (rm) { rm.checked = settings.reduceMotion; rm.addEventListener('change', () => { settings.reduceMotion = rm.checked; applySettings(); if (rm.checked) { const c = document.getElementById('nebula'); if (c) c.style.display='none'; } else { V.initNebula(); } }); }
-    if (snd) { snd.checked = settings.sound; snd.addEventListener('change', () => { settings.sound = snd.checked; applySettings(); }); }
+    if (rm) { rm.checked = settings.reduceMotion; rm.addEventListener('change', () => { settings.reduceMotion = rm.checked; V.applySettings(); if (rm.checked) { const c = document.getElementById('nebula'); if (c) c.style.display='none'; } else { V.initNebula(); } }); }
+    if (snd) { snd.checked = settings.sound; snd.addEventListener('change', () => { settings.sound = snd.checked; V.applySettings(); if (window.VOID.sound) window.VOID.sound.set(settings.sound); }); }
     // Quiet mode button
     if (!panel.querySelector('[data-quiet]')) {
       const qb = document.createElement('button');
